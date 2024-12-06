@@ -13,8 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@datastax/astra-db-ts": "^1.5.0",
-    "@langchain/community": "^0.3.17",
     "axios": "^1.7.8",
     "body-parser": "^1.20.3",
     "cheerio": "^1.0.0",
@@ -28,10 +26,11 @@
     "langchain": "^0.3.6",
     "node-cron": "^3.0.3",
     "openai": "^4.73.1",
-    "puppeteer": "^23.10.0",
     "winston": "^3.17.0"
   },
   "devDependencies": {
+    "@datastax/astra-db-ts": "^1.5.0",
+    "@langchain/community": "^0.3.17",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/helmet": "^4.0.0",
@@ -41,6 +40,7 @@
     "@types/puppeteer": "^5.4.7",
     "@types/winston": "^2.4.4",
     "nodemon": "^3.1.7",
+    "puppeteer": "^23.10.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   }
