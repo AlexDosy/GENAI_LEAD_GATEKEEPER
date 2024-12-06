@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm --prefix Server start",
-    "dev": "concurrently \"npm --prefix Client start\" \"npm --prefix Server run dev\"",
-    "build": "npm --prefix Client run build && npm --prefix Server run build"
+    "install": "npm --prefix Server install && npm --prefix Client install",
+    "build": "npm --prefix Client run build && npm --prefix Server run build",
+    "start": "npm --prefix Server start"
   },
   "keywords": [],
   "author": "",
