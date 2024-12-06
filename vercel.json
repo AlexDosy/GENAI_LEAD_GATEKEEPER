@@ -1,23 +1,24 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "Client/package.json",
-        "use": "@vercel/angular"
-      },
-      {
-        "src": "Server/index.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "Server/index.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "Client/dist/index.html"
-      }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "Client/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist/lead-generation-app" }
+    },
+    {
+      "src": "Server/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "Server/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Client/dist/lead-generation-app/index.html"
+    }
+  ]
+}
