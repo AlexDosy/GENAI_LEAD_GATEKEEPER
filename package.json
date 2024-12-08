@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "install": "npm --prefix Server install && npm --prefix Client install",
-    "build": "npm --prefix Client run build && cp -R Client/dist/* . && npm --prefix Server run build",
+ "scripts": {
+    "preinstall": "npx npm@latest install",
+    "install": "npm ci --prefix Server && npm ci --prefix Client",
+    "build": "npm --prefix Client run build && npm --prefix Server run build",
     "start": "npm --prefix Server start"
   },
   "keywords": [],
