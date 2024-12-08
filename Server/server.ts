@@ -9,6 +9,8 @@ import scrapingRoutes from './routes/scraping.routes';
 import ChatRoute from './routes/chat.routes';
 import LeadGenerationWorkflow, { initLeadGenerationWorkflow } from './services/workflow/lead-generation-workflow.service';
 import Logger from './utils/logger';
+import puppeteer from 'puppeteer';
+
 
 // Load environment variables
 dotenv.config();
@@ -29,6 +31,7 @@ class Server {
 
     // Initialize error handling
     this.initializeErrorHandling();
+   
   }
 
   private initializeMiddlewares() {
@@ -83,9 +86,9 @@ class Server {
         console.log(`Server running on port ${this.port}`);
         console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
       });
-      // Initialize Lead Generation Workflow
-      // await initLeadGenerationWorkflow();
-      // Logger.info('Lead Generation Workflow initialized');
+      // Initialize Lead Generation Workflow works every 12 hrs from the start of server(crone job)
+      await initLeadGenerationWorkflow();
+      Logger.info('Lead Generation Workflow initialized');
 
 
     } catch (error) {
